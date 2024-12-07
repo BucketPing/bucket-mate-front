@@ -1,31 +1,23 @@
 import chevronLeft from '@/assets/icons/chevron-left.svg';
 import Input from '@/components/common/Input';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const Home = () => {
-  const navigate = useNavigate();
-
-  const goToLogin = () => {
-    //TODO:: 로그인 페이지 확인
-    navigate('/login');
-  };
-
-  const goToSearch = () => {
-    //TODO:: 검색 페이지 확인
-    // navigate('/search');
+const Search = () => {
+  const search = () => {
+    console.log('1');
   };
 
   return (
     <div className='h-full'>
       <div className='h-full rounded-t-[20px] shadow-[0px_0px_20px_0px_#00000010] p-5'>
-        <div onClick={goToSearch} className='flex'>
+        <div className='flex items-center'>
           <Link to='/'>
-            <img src={chevronLeft} className='bg-red-500' />
+            <img src={chevronLeft} className='bg-red hover:fill-slate-400' />
           </Link>
           <Input
             placeholder='같이 버킷리스트 찾아볼까요?'
             onChange={() => {}}
-            onSearch={goToSearch}
+            onSearch={search}
             value=''
           />
         </div>
@@ -34,4 +26,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Search;
