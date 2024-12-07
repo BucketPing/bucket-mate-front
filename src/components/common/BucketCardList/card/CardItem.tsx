@@ -1,22 +1,33 @@
+import { CARD_COLOR, CATEGORY_EMOJI } from '@/constants';
 import type { Bucket } from '@/types/common/types';
 
 interface CardItemProps {
   bucket: Bucket;
+  onClick?: () => void;
 }
 
-const CardItem = ({ bucket }: CardItemProps) => {
+const CardItem = ({ bucket, onClick }: CardItemProps) => {
+  const cardBgColor = CARD_COLOR[bucket.categories[0]].bgColor;
+  const cardTextColor = CARD_COLOR[bucket.categories[0]].textColor;
+  const cardChipColor = CARD_COLOR[bucket.categories[0]].chipColor;
+
   return (
-    <div className='flex w-[138px] h-[186px] px-3 py-5 rounded-[10px] bg-[#FFFCE9] cursor-pointer shrink- flex-col justify-between'>
+    <div
+      className={`flex w-[138px] h-[186px] px-3 py-5 rounded-[10px] ${cardBgColor} cursor-pointer shrink- flex-col justify-between`}
+      onClick={onClick}
+    >
       <div>
         <h1 className='text-base font-bold tracking-[0.006em] text-left'>
           {bucket.title}
         </h1>
-        <span className='px-2 py-1 bg-[#FFEBEB] rounded-[4px] text-[#F84343] text-xs font-medium'>
+        <span
+          className={`px-2 py-1 ${cardChipColor} rounded-[4px] ${cardTextColor} text-xs font-medium`}
+        >
           {bucket.participant.length}명 참여중!
         </span>
       </div>
       <p className='flex text-[44px] leading-[60px] flex-row-reverse'>
-        <span>🥰</span>
+        <span>{CATEGORY_EMOJI[bucket.categories[0]]}</span>
       </p>
     </div>
   );

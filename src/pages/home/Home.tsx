@@ -26,10 +26,13 @@ const Home = () => {
     {
       id: 1,
       ownerId: 1,
-      category: '운동',
+      categories: ['운동'],
       title: '아침운동 부수기!',
       description: '아침운동 부수기!',
-      participant: [],
+      participant: [
+        { userId: 1, nickname: '홍길동', profile: '' },
+        { userId: 2, nickname: '김철수', profile: '' },
+      ],
       maxCapacity: 10,
       progressStatus: 1,
       startDate: '2024.10.01',
@@ -39,10 +42,13 @@ const Home = () => {
     {
       id: 2,
       ownerId: 2,
-      category: '운동',
-      title: '아침운동 부수기!',
+      categories: ['여행'],
+      title: '부모님이랑 여행가기!',
       description: '아침운동 부수기!',
-      participant: [],
+      participant: [
+        { userId: 1, nickname: '홍길동', profile: '' },
+        { userId: 2, nickname: '김철수', profile: '' },
+      ],
       maxCapacity: 10,
       progressStatus: 1,
       startDate: '2024.10.01',
@@ -52,8 +58,8 @@ const Home = () => {
     {
       id: 3,
       ownerId: 3,
-      category: '운동',
-      title: '아침운동 부수기!',
+      categories: ['학습'],
+      title: '맛집 탐방하기!',
       description: '아침운동 부수기!',
       participant: [
         { userId: 1, nickname: '홍길동', profile: '' },
@@ -91,7 +97,7 @@ const Home = () => {
           bucket={{
             id: 1,
             ownerId: 1,
-            category: '운동',
+            categories: ['운동'],
             title: '아침운동 부수기!',
             description: '아침운동 부수기!',
             participant: [
