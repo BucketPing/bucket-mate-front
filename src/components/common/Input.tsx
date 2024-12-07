@@ -16,7 +16,7 @@ const Input = ({
   onSearch,
 }: InputProps) => {
   return (
-    <div className='w-full flex items-center shadow-[0px_0px_10px_0px_#0000000F] rounded-xl py-2 px-3'>
+    <div className='w-full flex items-center shadow-[0px_0px_10px_0px_#0000000F] rounded-[10px] py-2 px-3'>
       <input
         value={value}
         defaultValue={defaultValue}
