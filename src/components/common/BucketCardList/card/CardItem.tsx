@@ -17,7 +17,7 @@ const CardItem = ({ bucket, onClick }: CardItemProps) => {
       onClick={onClick}
     >
       <div>
-        <p className='text-base font-bold tracking-[0.006em] text-left m-auto'>
+        <p className='text-base font-bold tracking-[0.006em] text-left m-auto truncate'>
           {bucket.title}
         </p>
         <span
