@@ -31,7 +31,9 @@ const OngoingBucket = ({ bucket, onClick }: OngoingBucketProps) => {
 
   return (
     <section className='flex flex-col gap-3'>
-      <p className='text-[#919191] text-base font-bold'>🏋️‍♂️ 진행중인 버킷</p>
+      <p className='text-[#919191] text-base font-bold'>
+        {ONGOING ? '🏋️‍♂️ 진행중인 버킷' : '진행 중인 버킷이 없어요 🥲'}
+      </p>
       <div className='relative'>
         {!ONGOING && (
           <button className='text-white font-bold px-4 py-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex items-center gap-1 rounded-full bg-gradient-to-t to-[#434252] from-[#040524]'>
