@@ -1,7 +1,7 @@
 import chevronLeft from '@/assets/icons/chevron-left.svg';
 import Input from '@/components/common/Input';
-import NoSearchResult from '@/components/search/NoSearchResult';
 import PopularSearches from '@/components/search/PopularSearches';
+import SearchResults from '@/components/search/SearchResults';
 import { Link } from 'react-router-dom';
 
 const Search = () => {
@@ -23,7 +23,8 @@ const Search = () => {
             value=''
           />
         </div>
-        <NoSearchResult />
+        <SearchResults />
+        {/* <NoSearchResult /> */}
         <PopularSearches />
       </div>
     </div>
