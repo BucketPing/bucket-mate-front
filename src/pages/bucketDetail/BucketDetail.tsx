@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Thumbnail from '@/components/bucketDetail/Thumbnail';
+import Thumbnail from '@/components/common/Thumbnail';
 import Header from '@/components/bucketDetail/Header';
 import Title from '@/components/bucketDetail/Title';
 import BucketOwner from '@/components/bucketDetail/BucketOwner';
