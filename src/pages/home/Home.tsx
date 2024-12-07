@@ -1,3 +1,5 @@
+import CardList from '@/components/home/card/CardList';
+import Header from '@/components/home/list/Header';
 import chevronLeft from '@/assets/icons/chevron-left.svg';
 import Input from '@/components/common/Input';
 import { Link, useNavigate } from 'react-router-dom';
@@ -29,6 +31,8 @@ const Home = () => {
             value=''
           />
         </div>
+        <Header>🔥 인기 버킷리스트</Header>
+      <CardList />
       </div>
     </div>
   );
