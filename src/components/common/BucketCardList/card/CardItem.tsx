@@ -13,13 +13,13 @@ const CardItem = ({ bucket, onClick }: CardItemProps) => {
 
   return (
     <div
-      className={`flex w-[138px] h-[186px] px-3 py-5 rounded-[10px] ${cardBgColor} cursor-pointer shrink- flex-col justify-between`}
+      className={`w-[138px] h-[186px] px-3 py-5 rounded-[10px] ${cardBgColor} cursor-pointer flex shrink- flex-col justify-between`}
       onClick={onClick}
     >
       <div>
-        <h1 className='text-base font-bold tracking-[0.006em] text-left'>
+        <p className='text-base font-bold tracking-[0.006em] text-left m-auto'>
           {bucket.title}
-        </h1>
+        </p>
         <span
           className={`px-2 py-1 ${cardChipColor} rounded-[4px] ${cardTextColor} text-xs font-medium`}
         >

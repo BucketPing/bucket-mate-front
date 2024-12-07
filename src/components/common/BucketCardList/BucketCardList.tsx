@@ -9,7 +9,7 @@ interface BucketCardListProps {
 
 const BucketCardList = ({ header, bucketList }: BucketCardListProps) => {
   return (
-    <div>
+    <div className='flex flex-col gap-3'>
       <ListHeader>{header}</ListHeader>
       <CardList bucketList={bucketList} />
     </div>
