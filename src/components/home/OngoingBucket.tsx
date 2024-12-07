@@ -1,5 +1,6 @@
-import type { Bucket } from '@/types/common/types';
 import plusIcon from '@/assets/icons/plus.svg';
+import type { Bucket } from '@/types/common/types';
+import { calculateDaysLeft, calculateProgress } from '@/utils/common/date';
 
 interface OngoingBucketProps {
   bucket: Bucket;
@@ -9,21 +10,8 @@ interface OngoingBucketProps {
 const OngoingBucket = ({ bucket, onClick }: OngoingBucketProps) => {
   const { title, startDate, endDate, progressStatus, participant } = bucket;
   const today = new Date();
-  today.setHours(0, 0, 0, 0);
   const startDt = new Date(bucket.startDate);
   const endDt = new Date(bucket.endDate);
-
-  const calculateDaysLeft = (): number => {
-    const difference = endDt.getTime() - today.getTime();
-    const daysLeft = Math.ceil(difference / (1000 * 60 * 60 * 24));
-    return daysLeft;
-  };
-  const calculateProgress = (): number => {
-    const totalDuration = endDt.getTime() - startDt.getTime();
-    const elapsedDuration = today.getTime() - startDt.getTime();
-    const progress = Math.round((elapsedDuration / totalDuration) * 100);
-    return progress;
-  };
 
   const ONGOING = progressStatus === 1;
 
@@ -48,7 +36,7 @@ const OngoingBucket = ({ bucket, onClick }: OngoingBucketProps) => {
           <div className='flex items-center justify-between'>
             <h2 className='text-base font-bold'>{title}</h2>
             <span className='bg-[#292A2C] font-bold text-white rounded-full px-2 py-1 ml-4 text-xs'>
-              {calculateDaysLeft()}일 남음
+              {calculateDaysLeft(endDt, today)}일 남음
             </span>
           </div>
           <div className='flex items-center justify-between'>
@@ -85,7 +73,7 @@ const OngoingBucket = ({ bucket, onClick }: OngoingBucketProps) => {
                   <circle
                     className='text-[#292A2C]'
                     strokeWidth='1'
-                    strokeDasharray={`${calculateProgress()} 100`}
+                    strokeDasharray={`${calculateProgress(endDt, startDt, today)} 100`}
                     stroke='currentColor'
                     fill='transparent'
                     r='16'
@@ -95,7 +83,7 @@ const OngoingBucket = ({ bucket, onClick }: OngoingBucketProps) => {
                   />
                 </svg>
                 <span className='absolute inset-0 flex items-center justify-center text-sm font-medium'>
-                  {calculateProgress()}%
+                  {calculateProgress(endDt, startDt, today)}%
                 </span>
               </div>
             </div>
