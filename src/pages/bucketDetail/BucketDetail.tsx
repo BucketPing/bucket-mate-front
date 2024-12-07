@@ -7,7 +7,7 @@ import BucketOwner from '@/components/bucketDetail/BucketOwner';
 import JoinMember from '@/components/bucketDetail/JoinMember';
 import Category from '@/components/bucketDetail/Category';
 import Description from '@/components/bucketDetail/Description';
-import Duration from '@/components/bucketDetail/duration';
+import Duration from '@/components/bucketDetail/Duration';
 import JoinBtn from '@/components/bucketDetail/JoinBtn';
 
 const BucketDetail = () => {

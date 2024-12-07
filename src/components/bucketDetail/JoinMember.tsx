@@ -30,11 +30,11 @@ const JoinMember = ({
         <img src={isExpandBtnClicked ? arrowUpSrc : arrowDownSrc} />
       </div>
 
-      <div>
+      <div className='text-[14px]'>
         {isExpandBtnClicked ? (
           <div>
             {mockBucketData.participant.map((p) => (
-              <div key={p.userId} className='flex gap-2 px-2 py-2'>
+              <div key={p.userId} className='flex items-center gap-2 px-2 py-2'>
                 <div>
                   <img src={p.profile} />
                 </div>

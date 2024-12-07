@@ -5,7 +5,7 @@ const Description = () => {
     <>
       <div
         dangerouslySetInnerHTML={{ __html: mockBucketData.description }}
-        className='pb-5'
+        className='pb-5 text-[14px]'
       ></div>
       <hr />
     </>
