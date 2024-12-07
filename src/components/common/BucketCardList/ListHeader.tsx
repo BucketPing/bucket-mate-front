@@ -3,10 +3,10 @@ interface HeaderProps {
   onEntireClick?: () => void;
 }
 
-const Header = ({ children, onEntireClick }: HeaderProps) => {
+const ListHeader = ({ children, onEntireClick }: HeaderProps) => {
   return (
     <div className='flex justify-between text-base'>
-      <h1 className='text-[#626262]'>{children}</h1>
+      <h1 className='text-[#626262] font-bold'>{children}</h1>
       <button className='text-[#292A2C]' onClick={onEntireClick}>
         전체보기
       </button>
@@ -14,4 +14,4 @@ const Header = ({ children, onEntireClick }: HeaderProps) => {
   );
 };
 
-export default Header;
+export default ListHeader;
