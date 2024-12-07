@@ -4,18 +4,20 @@ export interface BucketParticipant {
   profile: string;
 }
 
+export type Category =
+  | '운동'
+  | '여행'
+  | '학습'
+  | '취미'
+  | '음식'
+  | '문화'
+  | '봉사'
+  | '기타';
+
 export interface Bucket {
   id: number;
   ownerId: number;
-  category:
-    | '운동'
-    | '여행'
-    | '학습'
-    | '취미'
-    | '음식'
-    | '문화'
-    | '봉사'
-    | '기타';
+  categories: Category[];
   title: string;
   description: string;
   participant: BucketParticipant[];
