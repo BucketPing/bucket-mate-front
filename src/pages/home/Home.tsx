@@ -1,3 +1,5 @@
+import CardList from '@/components/home/card/CardList';
+import Header from '@/components/home/list/Header';
 import { Link, useNavigate } from 'react-router-dom';
 import Banner from '@/components/home/Banner';
 import Input from '@/components/common/Input';
@@ -36,6 +38,8 @@ const Home = () => {
             value=''
           />
         </div>
+        <Header>🔥 인기 버킷리스트</Header>
+        <CardList />
         <OngoingBucket
           bucket={{
             id: 1,
