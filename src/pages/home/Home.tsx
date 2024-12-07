@@ -8,12 +8,12 @@ import chevronLeft from '@/assets/icons/chevron-left.svg';
 
 const Home = () => {
   const navigate = useNavigate();
-  
+
   const goToLogin = () => {
     //TODO:: 로그인 페이지 확인
     navigate('/login');
   };
-  
+
   const goToSearch = () => {
     //TODO:: 검색 페이지 확인
     // navigate('/search');
@@ -22,14 +22,14 @@ const Home = () => {
   const goToDetail = () => {
     //navigate('/bucket/{id}')
   };
-  
+
   return (
     <div className='h-full'>
       <Banner onClick={goToLogin} />
       <div className='h-full rounded-t-[20px] shadow-[0px_0px_20px_0px_#00000010] p-5'>
         <div onClick={goToSearch} className='flex cursor-pointer'>
           <Link to='/'>
-            <img src={chevronLeft} className='bg-red-500' alt="back" />
+            <img src={chevronLeft} className='bg-red-500' />
           </Link>
           <Input
             placeholder='같이 버킷리스트 찾아볼까요?'
