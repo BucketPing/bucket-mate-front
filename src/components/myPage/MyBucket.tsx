@@ -92,7 +92,7 @@ const MyBucket = () => {
       <OngoingBucket
         bucket={currentBucket}
         onClick={goToDetail}
-        isExist={true}
+        isExist={!!currentBucket}
       />
       <BucketCardList header='최근 본 버킷' bucketList={sampleBucketList} />
       <MyPageMenu.List>
