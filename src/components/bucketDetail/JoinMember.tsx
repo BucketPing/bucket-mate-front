@@ -1,13 +1,16 @@
-import { mockBucketData } from '@/constants/bucketDetail/mockData';
 import arrowDownSrc from '@/assets/icons/arrow-down.svg';
 import arrowUpSrc from '@/assets/icons/arrow-up.svg';
+import { mockBucketData } from '@/constants/bucketDetail/mockData';
+import type { Bucket } from '@/types/common/types';
 
 interface JoinMembersProps {
+  bucketData: Bucket;
   setIsExpandBtnClicked: React.Dispatch<React.SetStateAction<boolean>>;
   isExpandBtnClicked: boolean;
 }
 
 const JoinMember = ({
+  bucketData,
   setIsExpandBtnClicked,
   isExpandBtnClicked,
 }: JoinMembersProps) => {
