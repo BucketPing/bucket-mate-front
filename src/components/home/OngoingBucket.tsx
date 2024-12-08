@@ -1,7 +1,8 @@
 import plusIcon from '@/assets/icons/plus.svg';
-import type { Bucket } from '@/types/common/types';
 import { calculateDaysLeft, calculateProgress } from '@/utils/common/date';
 import ProfileList from '../common/profile/ProfileList';
+import { dummyProfileSrc } from '@/constants/bucketDetail/mockData';
+import type { Bucket } from '@/types/common/types';
 
 interface OngoingBucketProps {
   bucket: Bucket;
@@ -45,7 +46,11 @@ const OngoingBucket = ({ bucket, isExist, onClick }: OngoingBucketProps) => {
             <div>
               <p className='text-[#8d8d8d] text-sm'>참여 멤버</p>
               <div className='flex space-x-2'>
-                <ProfileList srcList={participant.map((p) => p.profile)} />
+                <ProfileList
+                  srcList={participant.map(
+                    (p) => dummyProfileSrc[p.participantId].profile,
+                  )}
+                />
               </div>
               <p className='text-[#7b7d83] text-sm font-medium mt-3'>
                 📅 {startDate} ~ {endDate}

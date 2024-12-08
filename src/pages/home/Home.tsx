@@ -6,10 +6,6 @@ import { useModal } from '@/hooks/common/useModal';
 import { useGetHotBucketList } from '@/hooks/home/useGetBucketList';
 import LoginModal from '@/components/common/LoginModal';
 import BucketCardList from '@/components/common/BucketCardList/BucketCardList';
-import mockProfileOneSrc from '@/assets/icons/profile-1.svg';
-import mockProfileTwoSrc from '@/assets/icons/profile-2.svg';
-import mockProfileThreeSrc from '@/assets/icons/profile-3.svg';
-import mockProfileFourSrc from '@/assets/icons/profile-4.svg';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -51,31 +47,31 @@ const Home = () => {
         />
         <OngoingBucket
           bucket={{
-            id: 1,
+            bucketId: 1,
             ownerId: 1,
             categories: ['운동'],
             title: '아침운동 부수기!',
             description: '아침운동 부수기!',
             participant: [
               {
-                userId: 1,
-                nickname: '',
-                profile: mockProfileOneSrc,
+                id: 1,
+                bucketId: 1,
+                participantId: 1,
               },
               {
-                userId: 2,
-                nickname: '',
-                profile: mockProfileTwoSrc,
+                id: 2,
+                bucketId: 2,
+                participantId: 2,
               },
               {
-                userId: 3,
-                nickname: '',
-                profile: mockProfileThreeSrc,
+                id: 3,
+                bucketId: 3,
+                participantId: 3,
               },
               {
-                userId: 4,
-                nickname: '',
-                profile: mockProfileFourSrc,
+                id: 4,
+                bucketId: 4,
+                participantId: 4,
               },
             ],
             maxCapacity: 10,
