@@ -26,23 +26,23 @@ export const CARD_COLOR: Record<
   },
   음식: {
     bgColor: 'bg-[#E8FFE1]',
-    textColor: 'text-[#4CAF50]',
-    chipColor: 'bg-[#4CAF50]',
+    textColor: 'text-[#339316]',
+    chipColor: 'bg-[#C1FFAE]',
   },
   문화: {
     bgColor: 'bg-[#DEF1FF]',
-    textColor: 'text-[#2196F3]',
-    chipColor: 'bg-[#2196F3]',
+    textColor: 'text-[#0A6BAB]',
+    chipColor: 'bg-[#AEDFFF]',
   },
   봉사: {
     bgColor: 'bg-[#DEF1FF]',
-    textColor: 'text-[#2196F3]',
-    chipColor: 'bg-[#2196F3]',
+    textColor: 'text-[#0A6BAB]',
+    chipColor: 'bg-[#AEDFFF]',
   },
   기타: {
     bgColor: 'bg-[#DEF1FF]',
-    textColor: 'text-[#2196F3]',
-    chipColor: 'bg-[#2196F3]',
+    textColor: 'text-[#0A6BAB]',
+    chipColor: 'bg-[#AEDFFF]',
   },
 };
 
