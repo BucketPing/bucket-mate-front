@@ -36,7 +36,7 @@ const OngoingBucket = ({ bucket, isExist, onClick }: OngoingBucketProps) => {
         >
           <div className='flex items-center justify-between'>
             <h2 className='text-base font-bold'>{title}</h2>
-            <span className='bg-[#292A2C] font-bold text-white rounded-full px-2 py-1 ml-4 text-xs'>
+            <span className='bg-[#292A2C] font-bold text-white rounded-full px-2 py-1 ml-4 text-xs shrink-0'>
               {calculateDaysLeft(endDt, today)}일 남음
             </span>
           </div>
