@@ -2,6 +2,8 @@ import BucketCardList from '../common/BucketCardList/BucketCardList';
 import OngoingBucket from '../home/OngoingBucket';
 import type { Bucket } from '@/types/common/types';
 import { MyPageMenu } from './MyPageMenu';
+import { useModal } from '@/hooks/common/useModal';
+import ComingSoonModal from '../common/ComingSoonModal';
 
 const sampleBucketList: Bucket[] = [
   {
@@ -71,20 +73,22 @@ const sampleBucketList: Bucket[] = [
 ];
 
 const MyBucket = () => {
+  const { showModal, portalElement, openModal, closeModal } = useModal();
+
   const currentBucket = sampleBucketList[1];
 
   const goToDetail = () => {};
   const goToMyBucketList = () => {
-    alert('아직 준비중이에요! 조금만 기다려주세요!');
+    openModal();
   };
   const goToFavoriteBucketList = () => {
-    alert('아직 준비중이에요! 조금만 기다려주세요!');
+    openModal();
   };
   const goToRewardList = () => {
-    alert('아직 준비중이에요! 조금만 기다려주세요!');
+    openModal();
   };
   const goToContact = () => {
-    alert('아직 준비중이에요! 조금만 기다려주세요!');
+    openModal();
   };
 
   return (
@@ -109,6 +113,9 @@ const MyBucket = () => {
           문의하기
         </MyPageMenu.Button>
       </MyPageMenu.List>
+      {portalElement && showModal && (
+        <ComingSoonModal closeModal={closeModal} />
+      )}
     </div>
   );
 };
