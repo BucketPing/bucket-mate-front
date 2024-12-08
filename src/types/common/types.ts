@@ -1,4 +1,10 @@
 export interface BucketParticipant {
+  id: number;
+  bucketId: number;
+  participantId: number;
+}
+
+export interface BucketParticipantTemp {
   userId: number;
   nickname: string;
   profile: string;
@@ -15,7 +21,7 @@ export type Category =
   | '기타';
 
 export interface Bucket {
-  id: number;
+  bucketId: number;
   ownerId: number;
   categories: Category[];
   title: string;

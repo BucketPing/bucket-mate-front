@@ -1,4 +1,5 @@
 import { mockBucketData } from '@/constants/bucketDetail/mockData';
+import { dummyProfileSrc } from '@/constants/bucketDetail/mockData';
 import arrowDownSrc from '@/assets/icons/arrow-down.svg';
 import arrowUpSrc from '@/assets/icons/arrow-up.svg';
 
@@ -34,19 +35,28 @@ const JoinMember = ({
         {isExpandBtnClicked ? (
           <div>
             {mockBucketData.participant.map((p) => (
-              <div key={p.userId} className='flex items-center gap-2 px-2 py-2'>
+              <div
+                key={p.participantId}
+                className='flex items-center gap-2 px-2 py-2'
+              >
                 <div>
-                  <img src={p.profile} />
+                  <img
+                    src={dummyProfileSrc[p.participantId - 1].profile}
+                    alt='profile'
+                  />
                 </div>
-                <span>{p.nickname}</span>
+                <span>{dummyProfileSrc[p.participantId - 1].nickname}</span>
               </div>
             ))}
           </div>
         ) : (
           <div className='flex gap-1 px-2'>
             {mockBucketData.participant.map((p) => (
-              <div key={p.userId}>
-                <img src={p.profile} />
+              <div key={p.participantId}>
+                <img
+                  src={dummyProfileSrc[p.participantId - 1].profile}
+                  alt='profile'
+                />
               </div>
             ))}
           </div>

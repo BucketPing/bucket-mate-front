@@ -48,9 +48,9 @@ const CardList = ({ bucketList }: CardListProps) => {
     >
       {bucketList?.map((bucket) => (
         <CardItem
-          key={bucket.id}
+          key={bucket.bucketId}
           bucket={bucket}
-          onClick={() => goToDetail(bucket.id)}
+          onClick={() => goToDetail(bucket.bucketId)}
         />
       ))}
     </div>
