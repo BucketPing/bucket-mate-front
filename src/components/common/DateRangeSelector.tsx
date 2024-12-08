@@ -1,38 +1,28 @@
 import { useState } from 'react';
+import DateInput from './DateInput';
 
 const DateRangeSelector = () => {
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
 
   return (
-    <>
-      <div className='pb-12'>
-        <div className='flex justify-between items-centerw-full bg-[#FAFAFA] border rounded-[10px] py-3 pl-5 pr-32'>
-          <div className='flex flex-col font-medium text-sm border-r border-[#EBEDF1]'>
-            <span className='text-[#7B7D83]'>시작일</span>
-            <input
-              id='data'
-              type='date'
-              max='2025-12-12'
-              value={startDate}
-              onChange={(e) => setStartDate(e.target.value)}
-              className='border-none outline-none bg-transparent text-[#292A2C] font-bold text-sm'
-            />
-          </div>
-          <div className='flex flex-col font-medium text-sm'>
-            <span className='text-[#7B7D83]'>종료일</span>
-            <input
-              id='data'
-              type='date'
-              max='2025-12-12'
-              value={endDate}
-              onChange={(e) => setEndDate(e.target.value)}
-              className='border-none outline-none bg-transparent text-[#292A2C] font-bold text-sm'
-            />
-          </div>
-        </div>
+    <div className='pb-12'>
+      <div className='py-3 px-5 flex w-full bg-[#FAFAFA] border rounded-[10px]'>
+        <DateInput
+          label='시작일'
+          selectsStart
+          selectedDate={startDate}
+          onChange={setStartDate}
+        />
+        <DateInput
+          label='종료일'
+          selectsEnd
+          selectedDate={endDate}
+          onChange={setEndDate}
+          minDate={startDate}
+        />
       </div>
-    </>
+    </div>
   );
 };
 
