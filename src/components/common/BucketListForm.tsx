@@ -3,6 +3,7 @@ import ParticipantSlider from './ParticipantSlider';
 import TextAreaForm from './TextAreaForm';
 import LabelForm from './LabelForm';
 import DateRangeSelector from './DateRangeSelector';
+import Duration from '../bucketDetail/Duration';
 
 const BucketListForm = () => {
   const [title, setTitle] = useState('');
@@ -56,11 +57,13 @@ const BucketListForm = () => {
           최대<span className='text-[#292A2C] font-bold'> 3명</span>
         </div>
       </div>
-
       <ParticipantSlider />
 
       <LabelForm id='date' label='기간을 정해주세요' />
       <DateRangeSelector />
+      <div className='border-t'>
+        <Duration />
+      </div>
     </form>
   );
 };

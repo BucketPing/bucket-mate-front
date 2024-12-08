@@ -26,7 +26,7 @@ const ParticipantSlider = () => {
           style={{
             background: calculateSlider(),
           }}
-          className='w-[340px] h-[4px] rounded-[5px] outline-none appearance-none transition duration-300 my-5 mx-auto'
+          className='w-[calc(100%-32px)] h-[4px] rounded-[5px] outline-none appearance-none transition duration-300 my-5'
         />
         <div className='flex justify-between text-[#7B7D83] text-sm mx-6'>
           <p>{participants}명</p>
