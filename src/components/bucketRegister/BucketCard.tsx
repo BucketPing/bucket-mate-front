@@ -20,17 +20,21 @@ const profileImgList = [
 ];
 
 const BucketCard = ({ title }: BucketCardProps) => {
-  const bucketStatusStyle =
-    title === '매일 이불정리 깨끗하게' || title === '전공서적 꾸준히 읽기'
-      ? 'bg-[rgba(41,42,44,1)] text-[rgba(255,255,255,1)]'
-      : 'bg-[rgba(193,255,174,1)] text-[rgba(51,147,22,1)]';
+  const isDone =
+    title === '매일 이불정리 깨끗하게' || title === '전공서적 꾸준히 읽기';
+
+  const bucketStatusStyle = isDone
+    ? 'bg-[rgba(41,42,44,1)] text-[rgba(255,255,255,1)]'
+    : 'bg-[rgba(193,255,174,1)] text-[rgba(51,147,22,1)]';
 
   return (
-    <div className='border w-[355px] h-[206px] p-[20px] rounded-xl'>
+    <div
+      className={`border w-[355px] h-[${isDone ? 166 : 206}px] p-[20px] rounded-xl`}
+    >
       <header className='flex justify-between pb-3'>
-        <div className='font-medium text-[16px]'>{title}</div>
+        <div className='font-bold text-[16px]'>{title}</div>
         <span
-          className={`${bucketStatusStyle} pt-1 pr-2 pb-1 pl-2 rounded-xl text-[12px] font-semibold`}
+          className={`${bucketStatusStyle} pt-1 pr-2 pb-1 pl-2 rounded-xl text-[12px] font-bold`}
         >
           {title === '매일 이불정리 깨끗하게' ||
           title === '전공서적 꾸준히 읽기'
@@ -46,7 +50,7 @@ const BucketCard = ({ title }: BucketCardProps) => {
 
       <div className='flex items-center justify-between'>
         <div>
-          <div className='text-[14px] text-[rgba(141,141,141,1)]'>
+          <div className='text-[14px] text-[rgba(141,141,141,1)] font-medium'>
             참여 멤버
           </div>
           <div className='flex gap-1 py-2'>
@@ -56,24 +60,26 @@ const BucketCard = ({ title }: BucketCardProps) => {
               </div>
             ))}
           </div>
-          <div className='text-[rgba(123,125,131,1)] text-[14px]'>
+          <div className='text-[rgba(123,125,131,1)] text-[14px] font-medium'>
             🗓️ {mockBucketData.startDate} ~ {mockBucketData.endDate}
           </div>
         </div>
-        <div className='w-[66px] h-[66px] rounded-full flex items-center justify-center border-[2px] border-[rgba(30,217,42,1)] text-[rgba(30,217,42,1)]'>
+        <div className='w-[66px] h-[66px] rounded-full flex items-center justify-center border-[2px] border-[rgba(30,217,42,1)] text-[rgba(30,217,42,1)] font-bold'>
           100%
         </div>
       </div>
 
-      <div className='flex justify-between mt-5 text-[14px]'>
-        <div className='text-[rgba(231,48,48,1)] w-full text-center cursor-pointer'>
-          삭제
+      {!isDone && (
+        <div className='flex justify-between mt-5 text-[14px]'>
+          <div className='text-[rgba(231,48,48,1)] w-full text-center cursor-pointer font-medium'>
+            삭제
+          </div>
+          <span className='text-[rgba(217,217,217,1)]'>|</span>
+          <div className='text-[rgba(123,125,131,1)] w-full text-center cursor-pointer font-medium'>
+            편집
+          </div>
         </div>
-        <span>|</span>
-        <div className='text-[rgba(123,125,131,1)] w-full text-center cursor-pointer'>
-          편집
-        </div>
-      </div>
+      )}
     </div>
   );
 };

@@ -32,7 +32,7 @@ const BucketRegister = () => {
         className='fixed bottom-[42px] left-1/2 transform -translate-x-1/2 text-center'
         onClick={() => navigate('/create')}
       >
-        <button className='w-[165px] h-[50px] bg-gradient-to-t to-[#434252] from-[#040524] p-4 shadow-[0px_0px_20px_0px_#0000000F] text-[rgba(255,255,255,1)] rounded-3xl'>
+        <button className='w-[165px] h-[50px] bg-gradient-to-t to-[#434252] from-[#040524] shadow-[0px_0px_20px_0px_#0000000F] text-[rgba(255,255,255,1)] rounded-3xl font-bold hover:opacity-95 transition-opacity duration-300'>
           버킷 만들기 +
         </button>
       </div>
