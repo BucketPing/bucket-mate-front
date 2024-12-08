@@ -1,19 +1,22 @@
 import plusIcon from '@/assets/icons/plus.svg';
-import type { Bucket } from '@/types/common/types';
 import { calculateDaysLeft, calculateProgress } from '@/utils/common/date';
+import ProfileList from '../common/profile/ProfileList';
+import { dummyProfileSrc } from '@/constants/bucketDetail/mockData';
+import type { Bucket } from '@/types/common/types';
 
 interface OngoingBucketProps {
   bucket: Bucket;
+  isExist: boolean;
   onClick: () => void;
 }
 
-const OngoingBucket = ({ bucket, onClick }: OngoingBucketProps) => {
+const OngoingBucket = ({ bucket, isExist, onClick }: OngoingBucketProps) => {
   const { title, startDate, endDate, progressStatus, participant } = bucket;
   const today = new Date();
   const startDt = new Date(bucket.startDate);
   const endDt = new Date(bucket.endDate);
 
-  const ONGOING = progressStatus === 1;
+  const ONGOING = progressStatus === 1 && isExist;
 
   const blurStyle = ONGOING ? 'blur-none' : 'blur-[6px]';
 
@@ -30,12 +33,12 @@ const OngoingBucket = ({ bucket, onClick }: OngoingBucketProps) => {
           </button>
         )}
         <article
-          className={`${blurStyle} bg-[#fff0fb] rounded-[10px] p-5 flex flex-col gap-3 shadow-[0px_0px_17px_0px_#00000007]`}
+          className={`${blurStyle} cursor-pointer bg-[#fff0fb] rounded-[10px] p-5 flex flex-col gap-3 shadow-[0px_0px_17px_0px_#00000007]`}
           onClick={onClick}
         >
           <div className='flex items-center justify-between'>
             <h2 className='text-base font-bold'>{title}</h2>
-            <span className='bg-[#292A2C] font-bold text-white rounded-full px-2 py-1 ml-4 text-xs'>
+            <span className='bg-[#292A2C] font-bold text-white rounded-full px-2 py-1 ml-4 text-xs shrink-0'>
               {calculateDaysLeft(endDt, today)}일 남음
             </span>
           </div>
@@ -43,16 +46,11 @@ const OngoingBucket = ({ bucket, onClick }: OngoingBucketProps) => {
             <div>
               <p className='text-[#8d8d8d] text-sm'>참여 멤버</p>
               <div className='flex space-x-2'>
-                {/* TODO: 이미지로 대체하기 */}
-                {participant.map((user) => (
-                  <span key={user.userId}>
-                    {
-                      ['🐤', '🦁', '🐶', '🐱', '🐔', '🐷', '🐴'].sort(
-                        () => Math.random() - 0.5,
-                      )[0]
-                    }
-                  </span>
-                ))}
+                <ProfileList
+                  srcList={participant.map(
+                    (p) => dummyProfileSrc[p.participantId].profile,
+                  )}
+                />
               </div>
               <p className='text-[#7b7d83] text-sm font-medium mt-3'>
                 📅 {startDate} ~ {endDate}
