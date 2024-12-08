@@ -4,6 +4,10 @@ import Input from '@/components/common/Input';
 import OngoingBucket from '@/components/home/OngoingBucket';
 import BucketCardList from '@/components/common/BucketCardList/BucketCardList';
 import type { Bucket } from '@/types/common/types';
+import mockProfileOneSrc from '@/assets/icons/profile-1.svg';
+import mockProfileTwoSrc from '@/assets/icons/profile-2.svg';
+import mockProfileThreeSrc from '@/assets/icons/profile-3.svg';
+import mockProfileFourSrc from '@/assets/icons/profile-4.svg';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -116,8 +120,26 @@ const Home = () => {
             title: '아침운동 부수기!',
             description: '아침운동 부수기!',
             participant: [
-              { userId: 1, nickname: '홍길동', profile: '' },
-              { userId: 2, nickname: '김철수', profile: '' },
+              {
+                userId: 1,
+                nickname: '배달하는 자라',
+                profile: mockProfileOneSrc,
+              },
+              {
+                userId: 2,
+                nickname: '리액트 연합회',
+                profile: mockProfileTwoSrc,
+              },
+              {
+                userId: 3,
+                nickname: '선물왕 곰돌이',
+                profile: mockProfileThreeSrc,
+              },
+              {
+                userId: 4,
+                nickname: '스카이 너구리',
+                profile: mockProfileFourSrc,
+              },
             ],
             maxCapacity: 10,
             progressStatus: 1,
