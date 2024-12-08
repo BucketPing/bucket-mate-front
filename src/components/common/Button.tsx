@@ -13,7 +13,7 @@ const Button = ({ variant, children, onClick }: ButtonProps) => {
       : 'bg-[#0073FF] text-white';
   return (
     <button
-      className={`${variantStyle} rounded-[10px] h-[48px] cursor-pointer`}
+      className={`${variantStyle} w-full rounded-[10px] h-[48px] cursor-pointer`}
       onClick={onClick}
     >
       {children}
