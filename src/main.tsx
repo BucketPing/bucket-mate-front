@@ -7,6 +7,7 @@ import BucketDetail from '@/pages/bucketDetail/BucketDetail.tsx';
 import Layout from './Layout.tsx';
 import MyPage from './pages/myPage/MyPage.tsx';
 import './index.css';
+import BucketRegister from './pages/bucketRegister/BucketRegister.tsx';
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: '/mypage',
         element: <MyPage />,
+      },
+      {
+        path: '/bucket-register',
+        element: <BucketRegister />,
       },
     ],
   },
