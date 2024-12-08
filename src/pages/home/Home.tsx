@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom';
 import Banner from '@/components/home/Banner';
 import Input from '@/components/common/Input';
 import OngoingBucket from '@/components/home/OngoingBucket';
-import chevronLeft from '@/assets/icons/chevron-left.svg';
 import { useModal } from '@/hooks/common/useModal';
 import LoginModal from '@/components/common/LoginModal';
 import BucketCardList from '@/components/common/BucketCardList/BucketCardList';
