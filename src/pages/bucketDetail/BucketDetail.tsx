@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
 import Thumbnail from '@/components/common/Thumbnail';
 import Header from '@/components/bucketDetail/Header';
 import Title from '@/components/bucketDetail/Title';
@@ -12,7 +11,6 @@ import JoinBtn from '@/components/bucketDetail/JoinBtn';
 
 const BucketDetail = () => {
   // TODO: 추후 API 호출 시 사용
-  const { id: bucketId } = useParams();
 
   const [isHeartClicked, setIsHeartClicked] = useState(false);
   const [isExpandBtnClicked, setIsExpandBtnClicked] = useState(false);
