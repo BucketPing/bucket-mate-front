@@ -14,8 +14,7 @@ const Home = () => {
   };
 
   const goToSearch = () => {
-    //TODO:: 검색 페이지 확인
-    // navigate('/search');
+    navigate('/search');
   };
 
   const goToDetail = () => {
