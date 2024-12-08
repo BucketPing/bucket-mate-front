@@ -5,16 +5,17 @@ import ProfileList from '../common/profile/ProfileList';
 
 interface OngoingBucketProps {
   bucket: Bucket;
+  isExist: boolean;
   onClick: () => void;
 }
 
-const OngoingBucket = ({ bucket, onClick }: OngoingBucketProps) => {
+const OngoingBucket = ({ bucket, isExist, onClick }: OngoingBucketProps) => {
   const { title, startDate, endDate, progressStatus, participant } = bucket;
   const today = new Date();
   const startDt = new Date(bucket.startDate);
   const endDt = new Date(bucket.endDate);
 
-  const ONGOING = progressStatus === 1;
+  const ONGOING = progressStatus === 1 && isExist;
 
   const blurStyle = ONGOING ? 'blur-none' : 'blur-[6px]';
 
@@ -36,7 +37,7 @@ const OngoingBucket = ({ bucket, onClick }: OngoingBucketProps) => {
         >
           <div className='flex items-center justify-between'>
             <h2 className='text-base font-bold'>{title}</h2>
-            <span className='bg-[#292A2C] font-bold text-white rounded-full px-2 py-1 ml-4 text-xs'>
+            <span className='bg-[#292A2C] font-bold text-white rounded-full px-2 py-1 ml-4 text-xs shrink-0'>
               {calculateDaysLeft(endDt, today)}일 남음
             </span>
           </div>
