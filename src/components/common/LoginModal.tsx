@@ -1,7 +1,7 @@
 import CloseIcon from '@/assets/icons/close-icon.svg';
 import KakaoLogo from '@/assets/icons/kakao-icon.svg';
 import NaverLogo from '@/assets/icons/naver-logo.svg';
-import BucketMateLogo from '@/assets/icons/버-메.svg';
+import BucketMateLogo from '@/assets/icons/logo.svg';
 
 const LoginModal = ({ toggleModal }: { toggleModal: () => void }) => {
   return (
