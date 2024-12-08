@@ -1,17 +1,23 @@
 import { useEffect, useState } from 'react';
 
-//
 export const useModal = () => {
   const [showModal, setShowModal] = useState(false);
-  const [portalElement, setPortalElement] = useState<Element | null>(null);
 
-  const toggleModal = () => {
-    setShowModal((prev) => !prev);
+  const openModal = () => {
+    setShowModal(true);
+    document.body.style.overflow = 'hidden';
   };
+
+  const closeModal = () => {
+    setShowModal(false);
+    document.body.style.overflow = 'auto';
+  };
+
+  const [portalElement, setPortalElement] = useState<Element | null>(null);
 
   useEffect(() => {
     setPortalElement(document.getElementById('portal'));
   }, [showModal]);
 
-  return { showModal, setShowModal, portalElement, toggleModal };
+  return { showModal, portalElement, openModal, closeModal };
 };
