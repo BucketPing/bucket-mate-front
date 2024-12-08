@@ -8,7 +8,7 @@ const Layout = () => {
   const isFooter = pathname === '/' || pathname === '/mypage';
 
   return (
-    <div className='max-w-[426px] h-screen my-0 mx-auto'>
+    <div className='max-w-[426px] my-0 mx-auto'>
       {isHeader && <Header />}
       <Outlet />
       {isFooter && <Footer />}

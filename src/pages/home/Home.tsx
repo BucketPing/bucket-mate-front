@@ -2,16 +2,14 @@ import { useNavigate } from 'react-router-dom';
 import Banner from '@/components/home/Banner';
 import Input from '@/components/common/Input';
 import OngoingBucket from '@/components/home/OngoingBucket';
+import { useModal } from '@/hooks/common/useModal';
+import LoginModal from '@/components/common/LoginModal';
 import BucketCardList from '@/components/common/BucketCardList/BucketCardList';
 import type { Bucket } from '@/types/common/types';
 
 const Home = () => {
   const navigate = useNavigate();
-
-  const goToLogin = () => {
-    //TODO:: 로그인 페이지 확인
-    navigate('/login');
-  };
+  const { showModal, portalElement, openModal, closeModal } = useModal();
 
   const goToSearch = () => {
     navigate('/search');
@@ -90,8 +88,8 @@ const Home = () => {
 
   return (
     <div className='h-full'>
-      <Banner onClick={goToLogin} />
-      <div className='flex flex-col gap-5 h-full rounded-t-[20px] shadow-[0px_0px_20px_0px_#00000010] p-5'>
+      <Banner onClick={() => openModal()} />
+      <div className='flex flex-col gap-5  h-full rounded-t-[20px] shadow-[0px_0px_20px_0px_#00000010] p-5'>
         <div onClick={goToSearch} className='flex cursor-pointer'>
           <Input
             placeholder='같이 버킷리스트 찾아볼까요?'
@@ -128,6 +126,7 @@ const Home = () => {
           onClick={goToDetail}
         />
       </div>
+      {portalElement && showModal && <LoginModal closeModal={closeModal} />}
     </div>
   );
 };

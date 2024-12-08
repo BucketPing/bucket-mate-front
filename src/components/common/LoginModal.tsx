@@ -3,10 +3,10 @@ import KakaoLogo from '@/assets/icons/kakao-icon.svg';
 import NaverLogo from '@/assets/icons/naver-logo.svg';
 import BucketMateLogo from '@/assets/icons/logo.svg';
 
-const LoginModal = ({ toggleModal }: { toggleModal: () => void }) => {
+const LoginModal = ({ closeModal }: { closeModal: () => void }) => {
   return (
     <div className='fixed inset-0 z-50 flex items-center justify-center'>
-      <div className='fixed inset-0 bg-black/70' />
+      <div className='fixed inset-0 bg-black/70' onClick={() => closeModal()} />
       <div className='relative z-50 bg-white w-[355px] h-[278px] rounded-[20px] p-5 flex flex-col'>
         <div className='flex justify-between mb-3'>
           <img
@@ -15,10 +15,10 @@ const LoginModal = ({ toggleModal }: { toggleModal: () => void }) => {
             className='w-[57px] h-[34px]'
           />
           <img
-            onClick={toggleModal}
+            onClick={closeModal}
             src={CloseIcon}
             alt='모달 닫기'
-            className='w-[57px] h-[34px] ml-3'
+            className='h-[34px] ml-5 cursor-pointer'
           />
         </div>
 
