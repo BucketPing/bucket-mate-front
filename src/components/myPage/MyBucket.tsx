@@ -1,9 +1,15 @@
 import BucketCardList from '../common/BucketCardList/BucketCardList';
 import OngoingBucket from '../home/OngoingBucket';
-import type { Bucket } from '@/types/common/types';
 import { MyPageMenu } from './MyPageMenu';
-import { useModal } from '@/hooks/common/useModal';
 import ComingSoonModal from '../common/ComingSoonModal';
+import { useModal } from '@/hooks/common/useModal';
+import mockProfileOneSrc from '@/assets/icons/profile-1.svg';
+import mockProfileTwoSrc from '@/assets/icons/profile-2.svg';
+import mockProfileThreeSrc from '@/assets/icons/profile-3.svg';
+import mockProfileFourSrc from '@/assets/icons/profile-4.svg';
+import mockProfileFiveSrc from '@/assets/icons/profile-5.svg';
+import mockProfileSixSrc from '@/assets/icons/profile-6.svg';
+import type { Bucket } from '@/types/common/types';
 
 const sampleBucketList: Bucket[] = [
   {
@@ -13,11 +19,16 @@ const sampleBucketList: Bucket[] = [
     title: '아침운동 부수기!',
     description: '아침운동 부수기!',
     participant: [
-      { userId: 1, nickname: '홍길동', profile: '' },
-      { userId: 2, nickname: '김철수', profile: '' },
+      { userId: 1, nickname: '깔로스', profile: mockProfileOneSrc },
+      { userId: 2, nickname: '네모', profile: mockProfileTwoSrc },
+      { userId: 3, nickname: '새힘', profile: mockProfileSixSrc },
+      { userId: 4, nickname: '해나', profile: mockProfileFiveSrc },
+      { userId: 5, nickname: '와이', profile: mockProfileFourSrc },
+      { userId: 6, nickname: '허블', profile: mockProfileThreeSrc },
+      { userId: 7, nickname: '우디', profile: mockProfileOneSrc },
     ],
     maxCapacity: 10,
-    progressStatus: 0,
+    progressStatus: 1,
     startDate: '2024.10.01',
     endDate: '2025.6.02',
     createdAt: '2024.11.07',
@@ -29,8 +40,8 @@ const sampleBucketList: Bucket[] = [
     title: '부모님이랑 여행가서 맛집가고 쇼핑하고 야식먹고 잠자기!',
     description: '아침운동 부수기!',
     participant: [
-      { userId: 1, nickname: '홍길동', profile: '' },
-      { userId: 2, nickname: '김철수', profile: '' },
+      { userId: 1, nickname: '홍길동', profile: mockProfileThreeSrc },
+      { userId: 2, nickname: '김철수', profile: mockProfileFourSrc },
     ],
     maxCapacity: 10,
     progressStatus: 1,
@@ -45,8 +56,8 @@ const sampleBucketList: Bucket[] = [
     title: '맛집 탐방하기!',
     description: '아침운동 부수기!',
     participant: [
-      { userId: 1, nickname: '홍길동', profile: '' },
-      { userId: 2, nickname: '김철수', profile: '' },
+      { userId: 1, nickname: '홍길동', profile: mockProfileOneSrc },
+      { userId: 2, nickname: '김철수', profile: mockProfileTwoSrc },
     ],
     maxCapacity: 10,
     progressStatus: 1,
@@ -61,8 +72,8 @@ const sampleBucketList: Bucket[] = [
     title: '맛집 탐방하기!',
     description: '아침운동 부수기!',
     participant: [
-      { userId: 1, nickname: '홍길동', profile: '' },
-      { userId: 2, nickname: '김철수', profile: '' },
+      { userId: 1, nickname: '홍길동', profile: mockProfileFiveSrc },
+      { userId: 2, nickname: '김철수', profile: mockProfileSixSrc },
     ],
     maxCapacity: 10,
     progressStatus: 1,
@@ -74,8 +85,7 @@ const sampleBucketList: Bucket[] = [
 
 const MyBucket = () => {
   const { showModal, portalElement, openModal, closeModal } = useModal();
-
-  const currentBucket = sampleBucketList[1];
+  const currentBucket = sampleBucketList[0];
 
   const goToDetail = () => {};
   const goToMyBucketList = () => {
