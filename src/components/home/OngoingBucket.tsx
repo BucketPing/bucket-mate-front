@@ -4,16 +4,17 @@ import { calculateDaysLeft, calculateProgress } from '@/utils/common/date';
 
 interface OngoingBucketProps {
   bucket: Bucket;
+  isExist: boolean;
   onClick: () => void;
 }
 
-const OngoingBucket = ({ bucket, onClick }: OngoingBucketProps) => {
+const OngoingBucket = ({ bucket, isExist, onClick }: OngoingBucketProps) => {
   const { title, startDate, endDate, progressStatus, participant } = bucket;
   const today = new Date();
   const startDt = new Date(bucket.startDate);
   const endDt = new Date(bucket.endDate);
 
-  const ONGOING = progressStatus === 1;
+  const ONGOING = progressStatus === 1 && isExist;
 
   const blurStyle = ONGOING ? 'blur-none' : 'blur-[6px]';
 

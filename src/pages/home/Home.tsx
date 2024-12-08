@@ -126,6 +126,7 @@ const Home = () => {
             endDate: '2025.6.02',
             createdAt: '2024.11.07',
           }}
+          isExist={!!bucketListSample[0]}
           onClick={goToDetail}
         />
       </div>
