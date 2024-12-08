@@ -1,0 +1,34 @@
+{
+  "id": 1,
+  "ownerId": 1,
+  "categories": ["운동"],
+  "title": "아침운동 부수기!",
+  "description": "아침운동 부수기!",
+  "participant": [
+    {
+      "userId": 1,
+      "nickname": "",
+      "profile": ""
+    },
+    {
+      "userId": 2,
+      "nickname": "",
+      "profile": ""
+    },
+    {
+      "userId": 3,
+      "nickname": "",
+      "profile": ""
+    },
+    {
+      "userId": 4,
+      "nickname": "",
+      "profile": ""
+    }
+  ],
+  "maxCapacity": 10,
+  "progressStatus": 1,
+  "startDate": "2024.10.01",
+  "endDate": "2025.6.02",
+  "createdAt": "2024.11.07"
+}
