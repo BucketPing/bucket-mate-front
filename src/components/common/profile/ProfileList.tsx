@@ -1,6 +1,4 @@
-interface ProfileListProps {
-  srcList: string[];
-}
+import type { ProfileListProps } from '@/types/common/types';
 
 const ProfileList = ({ srcList }: ProfileListProps) => {
   return (
