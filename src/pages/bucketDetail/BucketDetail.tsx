@@ -26,7 +26,7 @@ const BucketDetail = () => {
   console.log(bucketData);
 
   return (
-    <section className='m-5'>
+    <section className='pb-1 mx-5 mt-5'>
       <Header />
       <Thumbnail />
 
