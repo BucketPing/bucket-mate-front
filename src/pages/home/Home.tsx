@@ -19,8 +19,8 @@ const Home = () => {
     navigate('/search');
   };
 
-  const goToDetail = () => {
-    //navigate('/bucket/{id}')
+  const goToDetail = (id: number) => {
+    navigate(`/bucket/${id}`);
   };
 
   const bucketListSample: Bucket[] = [
@@ -92,7 +92,11 @@ const Home = () => {
 
   return (
     <div className='h-full'>
-      <Banner onClick={() => openModal()} />
+      <Banner
+        onClick={() => {
+          sessionStorage.getItem('userId') ? navigate('/create') : openModal();
+        }}
+      />
       <div className='flex flex-col gap-5  h-full rounded-t-[20px] shadow-[0px_0px_20px_0px_#00000010] p-5'>
         <div onClick={goToSearch} className='flex cursor-pointer'>
           <Input
@@ -120,22 +124,22 @@ const Home = () => {
             participant: [
               {
                 userId: 1,
-                nickname: '배달하는 자라',
+                nickname: '',
                 profile: mockProfileOneSrc,
               },
               {
                 userId: 2,
-                nickname: '리액트 연합회',
+                nickname: '',
                 profile: mockProfileTwoSrc,
               },
               {
                 userId: 3,
-                nickname: '선물왕 곰돌이',
+                nickname: '',
                 profile: mockProfileThreeSrc,
               },
               {
                 userId: 4,
-                nickname: '스카이 너구리',
+                nickname: '',
                 profile: mockProfileFourSrc,
               },
             ],
@@ -145,10 +149,18 @@ const Home = () => {
             endDate: '2025.6.02',
             createdAt: '2024.11.07',
           }}
-          onClick={goToDetail}
+          onClick={() => goToDetail(1)}
         />
       </div>
-      {portalElement && showModal && <LoginModal closeModal={closeModal} />}
+      {!sessionStorage.getItem('userId') && portalElement && showModal && (
+        <LoginModal
+          closeModal={closeModal}
+          onClickLogin={() => {
+            sessionStorage.setItem('userId', '1');
+            navigate('/create');
+          }}
+        />
+      )}
     </div>
   );
 };

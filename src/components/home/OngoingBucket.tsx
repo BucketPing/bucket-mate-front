@@ -31,7 +31,7 @@ const OngoingBucket = ({ bucket, onClick }: OngoingBucketProps) => {
           </button>
         )}
         <article
-          className={`${blurStyle} bg-[#fff0fb] rounded-[10px] p-5 flex flex-col gap-3 shadow-[0px_0px_17px_0px_#00000007]`}
+          className={`${blurStyle} cursor-pointer bg-[#fff0fb] rounded-[10px] p-5 flex flex-col gap-3 shadow-[0px_0px_17px_0px_#00000007]`}
           onClick={onClick}
         >
           <div className='flex items-center justify-between'>

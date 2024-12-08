@@ -3,7 +3,22 @@ import KakaoLogo from '@/assets/icons/kakao-icon.svg';
 import NaverLogo from '@/assets/icons/naver-logo.svg';
 import BucketMateLogo from '@/assets/icons/logo.svg';
 
-const LoginModal = ({ closeModal }: { closeModal: () => void }) => {
+interface LoginModalProps {
+  closeModal: () => void;
+  onClickLogin: () => void;
+}
+
+const LoginModal = ({ closeModal, onClickLogin }: LoginModalProps) => {
+  const handleKakaoLogin = () => {
+    onClickLogin();
+    closeModal();
+  };
+
+  const handleNaverLogin = () => {
+    onClickLogin();
+    closeModal();
+  };
+
   return (
     <div className='fixed inset-0 z-50 flex items-center justify-center'>
       <div className='fixed inset-0 bg-black/70' onClick={() => closeModal()} />
@@ -27,11 +42,17 @@ const LoginModal = ({ closeModal }: { closeModal: () => void }) => {
           새로운 목표를 만들어봐요 🙌
         </div>
         <div>
-          <button className='flex items-center justify-center w-full px-[14px] py-2 mb-2 bg-[#FEE500] rounded-[10px]'>
+          <button
+            className='flex items-center justify-center w-full px-[14px] py-2 mb-2 bg-[#FEE500] rounded-[10px]'
+            onClick={handleKakaoLogin}
+          >
             <img className='mr-2' src={KakaoLogo} alt='카카오 로그인' />
             <div>카카오 로그인</div>
           </button>
-          <button className='flex items-center justify-center w-full px-[14px] py-2 bg-white border border-[#E6E6EA] rounded-[10px]'>
+          <button
+            className='flex items-center justify-center w-full px-[14px] py-2 bg-white border border-[#E6E6EA] rounded-[10px]'
+            onClick={handleNaverLogin}
+          >
             <img className='mr-2' src={NaverLogo} alt='네이버 로그인' />
             <div>네이버 로그인</div>
           </button>
