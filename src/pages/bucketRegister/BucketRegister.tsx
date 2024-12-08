@@ -14,7 +14,7 @@ const BucketRegister = () => {
   ];
 
   return (
-    <section className='px-5 py-3'>
+    <section className='px-5 py-3 pb-[112px] h-screen'>
       <header className='flex items-center w-[335px] h-[60px] p-[4px] gap-[10px] mb-5'>
         <button onClick={() => navigate(-1)} className='ml-3'>
           <img src={chevronLeftSrc} />
@@ -22,7 +22,7 @@ const BucketRegister = () => {
         <div className='font-medium'>내 버킷리스트</div>
       </header>
 
-      <div className='flex flex-col items-center gap-5'>
+      <div className='flex flex-col items-center gap-5 h-[70vh] overflow-scroll'>
         {bucketTitleList.map((title, index) => (
           <BucketCard key={index} title={title} />
         ))}

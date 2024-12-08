@@ -64,8 +64,10 @@ const BucketCard = ({ title }: BucketCardProps) => {
             🗓️ {mockBucketData.startDate} ~ {mockBucketData.endDate}
           </div>
         </div>
-        <div className='w-[66px] h-[66px] rounded-full flex items-center justify-center border-[2px] border-[rgba(30,217,42,1)] text-[rgba(30,217,42,1)] font-bold'>
-          100%
+        <div
+          className={`w-[66px] h-[66px] rounded-full flex items-center justify-center border-[2px] border-[rgba(30,217,42,1)] text-[rgba(30,217,42,1)] font-bold`}
+        >
+          {isDone ? 100 : 60}%
         </div>
       </div>
 
