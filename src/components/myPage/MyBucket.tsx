@@ -3,8 +3,6 @@ import OngoingBucket from '../home/OngoingBucket';
 import type { Bucket } from '@/types/common/types';
 import { MyPageMenu } from './MyPageMenu';
 
-interface MyBucketProps {}
-
 const sampleBucketList: Bucket[] = [
   {
     id: 1,
@@ -72,7 +70,7 @@ const sampleBucketList: Bucket[] = [
   },
 ];
 
-const MyBucket = ({}: MyBucketProps) => {
+const MyBucket = () => {
   const currentBucket = sampleBucketList[1];
 
   const goToDetail = () => {};
