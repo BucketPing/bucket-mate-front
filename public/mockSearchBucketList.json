@@ -1,0 +1,63 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "ownerId": 1,
+      "categories": ["운동", "취미"],
+      "title": "매일 아침 조깅하기",
+      "description": "아침 6시에 같이 조깅해요",
+      "maxCapacity": 5,
+      "progressStatus": 0,
+      "startDate": "2024-01-01",
+      "endDate": "2024-12-31",
+      "createdAt": "2024-12-07T13:52:17.548Z",
+      "participant": [
+        {
+          "id": 17,
+          "userId": 1,
+          "bucketId": 1,
+          "nickname": "러너1",
+          "profile": "profile1.jpg"
+        },
+        {
+          "id": 33,
+          "userId": 1,
+          "bucketId": 1,
+          "nickname": "러너1",
+          "profile": "profile1.jpg"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "ownerId": 7,
+      "categories": ["운동", "취미"],
+      "title": "주말 등산 동호회",
+      "description": "격주 토요일 서울 근교 산 등반",
+      "maxCapacity": 10,
+      "progressStatus": 0,
+      "startDate": "2024-03-01",
+      "endDate": "2024-11-30",
+      "createdAt": "2024-12-07T13:52:17.548Z",
+      "participant": [
+        {
+          "id": 27,
+          "userId": 7,
+          "bucketId": 7,
+          "nickname": "산사랑",
+          "profile": "profile11.jpg"
+        },
+        {
+          "id": 43,
+          "userId": 7,
+          "bucketId": 7,
+          "nickname": "산사랑",
+          "profile": "profile11.jpg"
+        }
+      ]
+    }
+  ],
+  "total": 2,
+  "searchTerm": "'운동'",
+  "matchedCategories": ["운동"]
+}

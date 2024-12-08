@@ -1,0 +1,173 @@
+{
+  "buckets": [
+    {
+      "id": 1,
+      "ownerId": 1,
+      "categories": ["운동", "취미"],
+      "title": "매일 아침 조깅하기",
+      "description": "아침 6시에 같이 조깅해요",
+      "maxCapacity": 5,
+      "progressStatus": 0,
+      "startDate": "2024-01-01",
+      "endDate": "2024-12-31",
+      "createdAt": "2024-12-07T13:52:17.548Z",
+      "participant": [
+        {
+          "id": 17,
+          "userId": 1,
+          "bucketId": 1,
+          "nickname": "러너1",
+          "profile": "profile1.jpg"
+        },
+        {
+          "id": 33,
+          "userId": 1,
+          "bucketId": 1,
+          "nickname": "러너1",
+          "profile": "profile1.jpg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "ownerId": 2,
+      "categories": ["여행", "문화"],
+      "title": "유럽 배낭여행 동행",
+      "description": "여름 유럽 2주 배낭여행 같이가실 분!",
+      "maxCapacity": 4,
+      "progressStatus": 0,
+      "startDate": "2024-07-01",
+      "endDate": "2024-07-15",
+      "createdAt": "2024-12-07T13:52:17.548Z",
+      "participant": [
+        {
+          "id": 18,
+          "userId": 2,
+          "bucketId": 2,
+          "nickname": "여행러버",
+          "profile": "profile2.jpg"
+        },
+        {
+          "id": 19,
+          "userId": 3,
+          "bucketId": 2,
+          "nickname": "세계여행가",
+          "profile": "profile3.jpg"
+        },
+        {
+          "id": 34,
+          "userId": 2,
+          "bucketId": 2,
+          "nickname": "여행러버",
+          "profile": "profile2.jpg"
+        },
+        {
+          "id": 35,
+          "userId": 3,
+          "bucketId": 2,
+          "nickname": "세계여행가",
+          "profile": "profile3.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "ownerId": 3,
+      "categories": ["학습", "취미"],
+      "title": "토익 900점 스터디",
+      "description": "매주 토요일 스터디하면서 같이 성장해요",
+      "maxCapacity": 6,
+      "progressStatus": 1,
+      "startDate": "2024-02-01",
+      "endDate": "2024-05-31",
+      "createdAt": "2024-12-07T13:52:17.548Z",
+      "participant": [
+        {
+          "id": 20,
+          "userId": 3,
+          "bucketId": 3,
+          "nickname": "영어왕",
+          "profile": "profile4.jpg"
+        },
+        {
+          "id": 36,
+          "userId": 3,
+          "bucketId": 3,
+          "nickname": "영어왕",
+          "profile": "profile4.jpg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "ownerId": 4,
+      "categories": ["음식", "문화"],
+      "title": "월 1회 맛집 탐방",
+      "description": "서울 숨은 맛집 찾아다니기",
+      "maxCapacity": 4,
+      "progressStatus": 1,
+      "startDate": "2024-01-15",
+      "endDate": "2024-12-15",
+      "createdAt": "2024-12-07T13:52:17.548Z",
+      "participant": [
+        {
+          "id": 21,
+          "userId": 4,
+          "bucketId": 4,
+          "nickname": "맛집헌터",
+          "profile": "profile5.jpg"
+        },
+        {
+          "id": 22,
+          "userId": 5,
+          "bucketId": 4,
+          "nickname": "미식가",
+          "profile": "profile6.jpg"
+        },
+        {
+          "id": 37,
+          "userId": 4,
+          "bucketId": 4,
+          "nickname": "맛집헌터",
+          "profile": "profile5.jpg"
+        },
+        {
+          "id": 38,
+          "userId": 5,
+          "bucketId": 4,
+          "nickname": "미식가",
+          "profile": "profile6.jpg"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "ownerId": 5,
+      "categories": ["봉사", "문화"],
+      "title": "주말 돌봄센터 봉사활동",
+      "description": "매월 마지막 주 토요일 아이들과 함께하는 시간",
+      "maxCapacity": 8,
+      "progressStatus": 0,
+      "startDate": "2024-02-24",
+      "endDate": "2024-12-28",
+      "createdAt": "2024-12-07T13:52:17.548Z",
+      "participant": [
+        {
+          "id": 23,
+          "userId": 5,
+          "bucketId": 5,
+          "nickname": "따뜻한마음",
+          "profile": "profile7.jpg"
+        },
+        {
+          "id": 39,
+          "userId": 5,
+          "bucketId": 5,
+          "nickname": "따뜻한마음",
+          "profile": "profile7.jpg"
+        }
+      ]
+    }
+  ],
+  "totalCount": 10
+}

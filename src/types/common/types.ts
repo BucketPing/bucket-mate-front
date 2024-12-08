@@ -36,3 +36,7 @@ export interface User {
   bookmarkList: number[];
   createdAt: string;
 }
+
+export interface ProfileListProps {
+  srcList: string[];
+}
