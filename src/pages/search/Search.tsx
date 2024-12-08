@@ -41,7 +41,7 @@ const Search = () => {
   }, [filteredData]);
 
   return (
-    <div className='h-full'>
+    <div className='h-screen'>
       <div className='h-full rounded-t-[20px] shadow-[0px_0px_20px_0px_#00000010]'>
         <div className='flex items-center p-5'>
           <Link to='/'>
