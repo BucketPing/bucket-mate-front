@@ -1,5 +1,4 @@
 import Title from '@/components/common/Title';
-import MyBucketList from '@/components/myPage/MyBucketList';
 import MyInfo from '@/components/myPage/MyInfo';
 
 const MyPage = () => {
