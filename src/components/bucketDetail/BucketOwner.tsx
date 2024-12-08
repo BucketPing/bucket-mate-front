@@ -1,13 +1,17 @@
-import { mockUserData } from '@/constants/bucketDetail/mockData';
 import mockProfileOneSrc from '@/assets/icons/profile-1.svg';
+import type { User } from '@/types/common/types';
 
-const BucketOwner = () => {
+interface BucketOwnerProps {
+  userData: User;
+}
+
+const BucketOwner = ({ userData }: BucketOwnerProps) => {
   return (
     <div className='flex items-center py-4'>
       <div className='mr-2'>
         <img src={mockProfileOneSrc} />
       </div>
-      <span className='font-medium'>{mockUserData.nickname}</span>
+      <span className='font-medium'>{userData.nickname}</span>
     </div>
   );
 };

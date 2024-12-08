@@ -1,6 +1,11 @@
 import { mockBucketData } from '@/constants/bucketDetail/mockData';
+import type { Bucket } from '@/types/common/types';
 
-const Category = () => {
+interface CategoryProps {
+  bucketData: Bucket;
+}
+
+const Category = ({ bucketData }: CategoryProps) => {
   return (
     <div className='flex text-[rgba(41,42,44,1)] text-[14px] mb-2'>
       {mockBucketData.categories.map((c) => (
