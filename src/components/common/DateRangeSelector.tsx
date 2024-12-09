@@ -13,6 +13,7 @@ const DateRangeSelector = () => {
           selectsStart
           selectedDate={startDate}
           onChange={setStartDate}
+          maxDate={endDate}
         />
         <DateInput
           label='종료일'
