@@ -39,7 +39,7 @@ const OngoingBucket = ({ bucket, isExist, onClick }: OngoingBucketProps) => {
           <div className='flex items-center justify-between'>
             <h2 className='text-base font-bold'>{title}</h2>
             <span className='bg-[#292A2C] font-bold text-white rounded-full px-2 py-1 ml-4 text-xs shrink-0'>
-              {calculateDaysLeft(endDt, today)}일 남음
+              174일 남음
             </span>
           </div>
           <div className='flex items-center justify-between'>
@@ -81,7 +81,7 @@ const OngoingBucket = ({ bucket, isExist, onClick }: OngoingBucketProps) => {
                   />
                 </svg>
                 <span className='absolute inset-0 flex items-center justify-center text-sm font-medium'>
-                  {calculateProgress(endDt, startDt, today)}%
+                  28%
                 </span>
               </div>
             </div>
