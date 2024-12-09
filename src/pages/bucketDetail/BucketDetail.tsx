@@ -20,9 +20,9 @@ const BucketDetail = () => {
   const [isHeartClicked, setIsHeartClicked] = useState(false);
   const [isExpandBtnClicked, setIsExpandBtnClicked] = useState(false);
 
-  const { data: bucketData, isFetching: bucketFetching } = useGetBucketDetail(
-    bucketId as string,
-  );
+  //데모때문 일단 하드코딩
+  const { data: bucketData, isFetching: bucketFetching } =
+    useGetBucketDetail('11');
   const { data: userData, isFetching: userDataFetching } = useGetUserDetail(1);
 
   return (

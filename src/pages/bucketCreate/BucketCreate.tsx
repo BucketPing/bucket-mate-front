@@ -44,7 +44,7 @@ const BucketCreate = () => {
       <main>
         <div className=''>
           <LabelForm id='bucket-create' label='버킷 카테고리 선택해 주세요' />
-          <div className='mt-4 flex flex-wrap gap-3'>
+          <div className='flex flex-wrap gap-3 mt-4'>
             {categories.map((category) => (
               <button
                 key={category.id}
@@ -60,16 +60,8 @@ const BucketCreate = () => {
             ))}
           </div>
         </div>
-        <BucketListForm />
+        <BucketListForm selectedCategories={selectedCategories} />
       </main>
-      <footer>
-        <div
-          onClick={() => navigate('/bucket/:id')}
-          className='w-full bg-[rgba(0,115,255,1)] text-[16px] text-center font-medium text-white py-3 rounded-xl mt-2'
-        >
-          버킷리스트 만들기
-        </div>
-      </footer>
     </div>
   );
 };
