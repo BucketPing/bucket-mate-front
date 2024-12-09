@@ -6,12 +6,14 @@ import DateRangeSelector from './DateRangeSelector';
 import Duration from '../bucketDetail/Duration';
 import type { CreateBucketReqBody } from '@/types/bucketCreate';
 import { createBucket } from '@/api/home';
+import { useNavigate } from 'react-router-dom';
 
 interface BucketListFormProps {
   selectedCategories: number[];
 }
 
 const BucketListForm = ({ selectedCategories }: BucketListFormProps) => {
+  const navigate = useNavigate();
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const maxTitleLength = 30;
@@ -31,19 +33,21 @@ const BucketListForm = ({ selectedCategories }: BucketListFormProps) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     // 코드 추후 리팩토링 필요~!
-    const reqBody: CreateBucketReqBody = {
-      userId: 1,
-      category: '운동',
-      title: '주말 아침 조깅 모임',
-      description:
-        '한강공원에서 함께 조깅하며 건강한 주말 아침을 시작해요. 초보자부터 마라톤 준비생까지 누구나 환영합니다!',
-      maxCapacity: 6,
-      startDate: '2024-12-14',
-      endDate: '2024-12-29',
-    };
+    // const reqBody: CreateBucketReqBody = {
+    //   userId: 1,
+    //   category: '운동',
+    //   title: '주말 아침 조깅 모임',
+    //   description:
+    //     '한강공원에서 함께 조깅하며 건강한 주말 아침을 시작해요. 초보자부터 마라톤 준비생까지 누구나 환영합니다!',
+    //   maxCapacity: 6,
+    //   startDate: '2024-12-14',
+    //   endDate: '2024-12-29',
+    // };
 
-    await createBucket(reqBody);
-    e.preventDefault();
+    navigate('/bucket-register');
+    // return await createBucket(reqBody).then((res) => {
+    //   // console.log(res);
+    // });
   };
 
   return (
@@ -73,7 +77,7 @@ const BucketListForm = ({ selectedCategories }: BucketListFormProps) => {
       <div className='flex items-end justify-between'>
         <LabelForm id='maxCapacity' label='최대 몇명까지 참여할까요?' />
         <div className='py-1 px-2 border rounded-full text-sm text-[#A4A7AF] bg-[#FAFAFA] text-center mb-2'>
-          최대<span className='text-[#292A2C] font-bold'> 3명</span>
+          최대<span className='text-[#292A2C] font-bold'> 6명</span>
         </div>
       </div>
 
