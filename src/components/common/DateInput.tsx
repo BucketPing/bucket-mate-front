@@ -7,6 +7,7 @@ const DateInput = ({
   selectedDate,
   onChange,
   minDate,
+  maxDate,
   selectsStart,
   selectsEnd,
 }: {
@@ -14,6 +15,7 @@ const DateInput = ({
   selectedDate: Date | null;
   onChange: (date: Date | null) => void;
   minDate?: Date | null;
+  maxDate?: Date | null;
   selectsStart?: boolean;
   selectsEnd?: boolean;
 }) => (
@@ -24,6 +26,7 @@ const DateInput = ({
       selected={selectedDate}
       selectsEnd={selectsEnd}
       onChange={onChange}
+      maxDate={maxDate || undefined}
       minDate={minDate || undefined}
       selectsStart={selectsStart}
       dateFormat='yyyy.MM.dd'

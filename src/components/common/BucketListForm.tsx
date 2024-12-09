@@ -4,8 +4,14 @@ import TextAreaForm from './TextAreaForm';
 import LabelForm from './LabelForm';
 import DateRangeSelector from './DateRangeSelector';
 import Duration from '../bucketDetail/Duration';
+import type { CreateBucketReqBody } from '@/types/bucketCreate';
+import { createBucket } from '@/api/home';
 
-const BucketListForm = () => {
+interface BucketListFormProps {
+  selectedCategories: number[];
+}
+
+const BucketListForm = ({ selectedCategories }: BucketListFormProps) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const maxTitleLength = 30;
@@ -23,7 +29,20 @@ const BucketListForm = () => {
     setDescription(updatedDescription);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    // 코드 추후 리팩토링 필요~!
+    const reqBody: CreateBucketReqBody = {
+      userId: 1,
+      category: '운동',
+      title: '주말 아침 조깅 모임',
+      description:
+        '한강공원에서 함께 조깅하며 건강한 주말 아침을 시작해요. 초보자부터 마라톤 준비생까지 누구나 환영합니다!',
+      maxCapacity: 6,
+      startDate: '2024-12-14',
+      endDate: '2024-12-29',
+    };
+
+    await createBucket(reqBody);
     e.preventDefault();
   };
 
@@ -65,6 +84,13 @@ const BucketListForm = () => {
       <div className='border-t'>
         <Duration />
       </div>
+
+      <button
+        onClick={handleSubmit}
+        className='w-full bg-[rgba(0,115,255,1)] text-[16px] text-center font-medium text-white py-3 rounded-xl mt-2'
+      >
+        버킷리스트 만들기
+      </button>
     </form>
   );
 };

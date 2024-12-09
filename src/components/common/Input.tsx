@@ -6,6 +6,8 @@ interface InputProps {
   value: string | number;
   defaultValue?: string | number;
   onSearch?: () => void;
+  onFucus?: () => void;
+  onBlur?: () => void;
 }
 
 const Input = ({
@@ -14,6 +16,8 @@ const Input = ({
   value,
   defaultValue,
   onSearch,
+  onFucus,
+  onBlur,
 }: InputProps) => {
   return (
     <div className='w-full flex items-center shadow-[0px_0px_10px_0px_#0000000F] rounded-[10px] py-2 px-3'>
@@ -23,6 +27,8 @@ const Input = ({
         className='w-full rounded-lg border-none outline-none placeholder:text-[#cdd1db]'
         placeholder={placeholder}
         onChange={onChange}
+        onFocus={onFucus}
+        onBlur={onBlur}
       />
       {onSearch && (
         <img

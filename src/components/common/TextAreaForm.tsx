@@ -18,6 +18,7 @@ const TextAreaForm = ({
   return (
     <div className='w-full py-4 px-3 flex items-center rounded-[10px] bg-[#F5F6F8]'>
       <textarea
+        required
         rows={rows}
         maxLength={maxLength}
         id={id}
