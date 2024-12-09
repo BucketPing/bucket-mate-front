@@ -5,6 +5,7 @@ import mockMyBucketDetail from '../../../public/mockMyBucketDetail.json';
 import mockUserDetail from '../../../public/mockUserDetail.json';
 import type { BucketHotListResponse } from '@/types/home';
 import type { Bucket, User } from '@/types/common/types';
+import type { SearchBucketList } from '@/types/search/search';
 
 const mock = new AxiosMockAdapter(axios.host);
 
@@ -44,6 +45,18 @@ export const getUserList = async (): Promise<User[]> => {
 export const getUserDetail = async (userId: number): Promise<User> => {
   try {
     const response = await axios.host.get(`/api/user/${userId}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const searchBucketList = async (
+  keyword: string,
+): Promise<SearchBucketList> => {
+  try {
+    const response = await axios.host.get(`/api/search?search=${keyword}`);
+    console.log(response.data);
     return response.data;
   } catch (error) {
     throw error;

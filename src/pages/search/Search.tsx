@@ -4,6 +4,7 @@ import NoSearchResults from '@/components/search/NoSearchResult';
 import PopularSearches from '@/components/search/PopularSearches';
 import SearchResults from '@/components/search/SearchResults';
 import { useDebounce } from '@/hooks/common/useDebounce';
+import { useSearchBucketList } from '@/hooks/search/useSearchBucketList';
 import type { SearchBucketList } from '@/types/search/search';
 import { useQuery } from '@tanstack/react-query';
 import { useMemo, useState } from 'react';
@@ -26,6 +27,8 @@ const Search = () => {
   };
 
   const { data, isFetching } = useGetBucketList();
+  // 아래가 실제 API
+  // const { data, isFetching } = useSearchBucketList(debouncedSearchValue);
 
   const filteredData = useMemo(() => {
     return debouncedSearchValue !== '' ? data?.results : [];
