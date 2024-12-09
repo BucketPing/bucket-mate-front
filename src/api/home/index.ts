@@ -22,9 +22,10 @@ export const getBucketHotList = async (): Promise<BucketHotListResponse> => {
   }
 };
 
-export const getBucketDetail = async (bucketId: number): Promise<Bucket> => {
+export const getBucketDetail = async (bucketId: string): Promise<Bucket> => {
   try {
     const response = await axios.host.get(`/api/bucket-list/${bucketId}`);
+
     return response.data;
   } catch (error) {
     throw error;

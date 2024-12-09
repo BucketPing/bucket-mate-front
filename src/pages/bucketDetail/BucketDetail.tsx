@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Thumbnail from '@/components/common/Thumbnail';
 import Header from '@/components/bucketDetail/Header';
 import Title from '@/components/bucketDetail/Title';
@@ -15,15 +15,15 @@ import { useGetBucketDetail } from '@/hooks/bucketDetail/useGetBucketDetail';
 import type { Bucket, User } from '@/types/common/types';
 
 const BucketDetail = () => {
-  // const { id: bucketId } = useParams();
+  const { id: bucketId } = useParams();
 
   const [isHeartClicked, setIsHeartClicked] = useState(false);
   const [isExpandBtnClicked, setIsExpandBtnClicked] = useState(false);
 
-  const { data: bucketData, isFetching: bucketFetching } =
-    useGetBucketDetail(11);
+  const { data: bucketData, isFetching: bucketFetching } = useGetBucketDetail(
+    bucketId as string,
+  );
   const { data: userData, isFetching: userDataFetching } = useGetUserDetail(1);
-  console.log(bucketData);
 
   return (
     <section className='pb-1 mx-5 mt-5'>
