@@ -46,9 +46,9 @@ const CardList = ({ bucketList }: CardListProps) => {
       onMouseUp={mouseUpHandler}
       onMouseMove={mouseMoveHandler}
     >
-      {bucketList?.map((bucket) => (
+      {bucketList?.map((bucket, index) => (
         <CardItem
-          key={bucket.bucketId}
+          key={index}
           bucket={bucket}
           onClick={() => goToDetail(bucket.bucketId)}
         />

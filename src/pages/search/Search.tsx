@@ -8,9 +8,10 @@ import { useDebounce } from '@/hooks/common/useDebounce';
 import type { SearchBucketList } from '@/types/search/search';
 import { useQuery } from '@tanstack/react-query';
 import { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Search = () => {
+  const navigate = useNavigate();
   const [searchInputFocused, setSearchInputFocused] = useState(false);
   const [searchValue, setSearchValue] = useState<string>('');
   const debouncedSearchValue = useDebounce(searchValue, 300);
@@ -51,9 +52,9 @@ const Search = () => {
     <div className='h-screen'>
       <div className='h-full rounded-t-[20px] shadow-[0px_0px_20px_0px_#00000010]'>
         <div className='flex items-center p-5'>
-          <Link to='/'>
+          <div onClick={() => navigate('/')}>
             <img src={chevronLeft} className='bg-red hover:fill-slate-400' />
-          </Link>
+          </div>
           <Input
             placeholder='같이 버킷리스트 찾아볼까요?'
             onFucus={() => setSearchInputFocused(true)}
